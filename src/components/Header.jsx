@@ -45,7 +45,7 @@ function Header() {
           to="/contacto"
           className="custom-button"
         >
-          Contacto
+          Contactos
         </Button>
           {/* boton de delete */}
         <Button
