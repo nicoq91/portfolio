@@ -1,24 +1,68 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Button, IconButton } from '@mui/material';
-import { Link } from 'react-router-dom';
-import GetAppIcon from '@mui/icons-material/GetApp';
+import React from "react";
+import { AppBar, Toolbar, Button } from "@mui/material";
+import { Link } from "react-router-dom";
+import DownloadIcon from '@mui/icons-material/Download';
+import "./header.css";
+
 function Header() {
-    return (
-        <AppBar position="static">
-            <Toolbar>
-                <Typography variant="h6" style={{ flexGrow: 1 }}>
-                    Logo
-                </Typography>
-                <Button color="inherit" component={Link} to="/">Inicio</Button>
-                <Button color="inherit" component={Link} to="/acerca-de-mi">Acerca de mí</Button>
-                <Button color="inherit" component={Link} to="/proyectos">Proyectos</Button>
-                <Button color="inherit" component={Link} to="/contacto">Contacto</Button>
-                <IconButton color="inherit" aria-label="descargar currículum" component="a" href="/path-to-your-cv.pdf" download>cv
-                    <GetAppIcon />
-                </IconButton>
-            </Toolbar>
-        </AppBar>
-    );
+  return (
+    <AppBar
+      position="static"
+
+      sx={{ boxShadow: "none", padding: 0, backgroundColor: '#0f0e17' }}
+    //   sx={{ boxShadow:"none", padding: 0 ,backgroundColor:{xs:"red", lg:"black"} }}
+
+    >
+      <Toolbar>
+        <Button
+          color="inherit"
+          component={Link}
+          to="/"
+          className="custom-button"
+        >
+          Inicio
+        </Button>
+        <Button
+          color="inherit"
+          component={Link}
+          to="/acerca-de-mi"
+          className="custom-button"
+        >
+          Acerca de mí
+        </Button>
+        <Button
+          color="inherit"
+          component={Link}
+          to="/proyectos"
+          className="custom-button"
+          
+        >
+          Proyectos
+        </Button>
+        <Button
+          color="inherit"
+          component={Link}
+          to="/contacto"
+          className="custom-button"
+        >
+          Contacto
+        </Button>
+          {/* boton de delete */}
+        <Button
+          color="inherit"
+          aria-label="descargar currículum"
+          component="a"
+          href="/path-to-your-cv.pdf"
+          download
+          sx={{color:'white',background:'#ff8906' ,position: 'absolute',right:'20px', width: '300px', border:'3px solid #ff8906',padding:'10px'}}
+        >
+          {" "}
+          Descargar Curriculum{" "}
+         <DownloadIcon/>
+        </Button>
+      </Toolbar>
+    </AppBar>
+  );
 }
 
 export default Header;
